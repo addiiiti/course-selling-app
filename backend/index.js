@@ -2,10 +2,12 @@ const express = require('express')
 const app = express()//creates an instance of express app
 const {userRouter}=require("./routes/user");
 const {courseRouter}=require("./routes/course");
+const {adminRouter}=require("./routes/admin");
 const port = 3001
 app.use(express.json());
-app.use("/user", userRouter);
-app.use("/course",courseRouter);
+app.use("/api/v1/user", userRouter);
+app.use("/api/v1/course",courseRouter);
+app.use("/api/v1/admin",adminRouter);
 
 
 app.listen(port, () => {
